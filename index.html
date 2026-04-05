@@ -3,10 +3,625 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playbook</title>
+    <title>GB Maxibasketball F50+ Women's Programme — Master Playbook</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --red: #cc0000;
+        --navy: #003087;
+        --navy-dark: #001a4d;
+        --white: #ffffff;
+        --light-grey: #f5f5f5;
+        --mid-grey: #e0e0e0;
+        --dark-text: #1a1a1a;
+        --sidebar-width: 280px;
+      }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      body { font-family: 'Open Sans', sans-serif; color: var(--dark-text); background-color: var(--white); line-height: 1.6; display: flex; }
+      h1,h2,h3,h4,h5,h6 { font-family: 'Montserrat', sans-serif; color: var(--navy); margin-bottom: 1rem; }
+      #sidebar { width: var(--sidebar-width); background-color: var(--light-grey); height: 100vh; position: fixed; left: 0; top: 0; padding: 2rem 1rem; overflow-y: auto; border-right: 1px solid var(--mid-grey); z-index: 1000; transition: transform 0.3s ease; }
+      #sidebar h2 { font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--red); }
+      #sidebar ul { list-style: none; }
+      #sidebar li { margin-bottom: 0.5rem; }
+      #sidebar a { text-decoration: none; color: var(--navy); font-weight: 600; display: block; padding: 0.5rem; border-radius: 4px; transition: background-color 0.2s, color 0.2s; }
+      #sidebar a:hover, #sidebar a.active { background-color: var(--navy); color: var(--white); }
+      #main-content { margin-left: var(--sidebar-width); width: calc(100% - var(--sidebar-width)); min-height: 100vh; }
+      #menu-toggle { display: none; position: fixed; top: 1rem; right: 1rem; background: var(--navy); color: var(--white); border: none; padding: 0.5rem 1rem; font-size: 1.5rem; border-radius: 4px; cursor: pointer; z-index: 1001; }
+      .hero { background-color: var(--navy); color: var(--white); padding: 6rem 2rem; text-align: center; position: relative; border-bottom: 10px solid var(--red); overflow: hidden; }
+      .hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(to bottom right, transparent 48%, rgba(255,255,255,0.05) 48%, rgba(255,255,255,0.05) 52%, transparent 52%), linear-gradient(to top right, transparent 48%, rgba(255,255,255,0.05) 48%, rgba(255,255,255,0.05) 52%, transparent 52%), linear-gradient(to right, transparent 48%, rgba(204,0,0,0.1) 48%, rgba(204,0,0,0.1) 52%, transparent 52%), linear-gradient(to bottom, transparent 48%, rgba(204,0,0,0.1) 48%, rgba(204,0,0,0.1) 52%, transparent 52%); opacity: 0.5; z-index: 1; }
+      .hero-content { position: relative; z-index: 2; }
+      .hero h1 { color: var(--white); font-size: 3rem; font-weight: 800; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 0.5rem; }
+      .hero h2 { color: var(--white); font-size: 1.5rem; font-weight: 400; margin-bottom: 1rem; }
+      .hero p.tagline { font-size: 1.25rem; font-style: italic; color: var(--light-grey); margin-top: 2rem; }
+      section { padding: 4rem 3rem; border-bottom: 1px solid var(--mid-grey); position: relative; }
+      section:not(.hero) { border-left: 6px solid var(--red); background: var(--white); }
+      .appendix-section { background-color: var(--light-grey) !important; border-left: 6px solid var(--navy-dark) !important; }
+      .appendix-section h2 { color: var(--navy-dark); }
+      .card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+      .card { background: var(--white); border: 1px solid var(--mid-grey); border-top: 4px solid var(--red); padding: 1.5rem; border-radius: 4px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); transition: transform 0.2s, box-shadow 0.2s; }
+      .card:hover { transform: translateY(-5px); box-shadow: 0 6px 12px rgba(0,0,0,0.1); }
+      .card h3 { margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
+      .callout { background: var(--navy); color: var(--white); padding: 1.5rem; border-left: 4px solid var(--red); border-radius: 4px; margin: 1.5rem 0; }
+      .callout h3 { color: var(--white); }
+      .callout.red-bg { background: var(--red); border-left: 4px solid var(--navy); }
+      .tabs { margin: 2rem 0; }
+      .tab-buttons { display: flex; border-bottom: 2px solid var(--mid-grey); margin-bottom: 1rem; }
+      .tab-btn { background: none; border: none; padding: 0.75rem 1.5rem; font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--navy); cursor: pointer; transition: all 0.2s; }
+      .tab-btn.active { color: var(--red); border-bottom: 3px solid var(--red); margin-bottom: -2px; }
+      .tab-content { display: none; padding: 1rem; background: var(--light-grey); border-radius: 0 4px 4px 4px; }
+      .tab-content.active { display: block; }
+      table { width: 100%; border-collapse: collapse; margin: 2rem 0; background: var(--white); box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+      th, td { padding: 1rem; text-align: left; border: 1px solid var(--mid-grey); }
+      th { background-color: var(--navy); color: var(--white); font-family: 'Montserrat', sans-serif; }
+      tr:nth-child(even) { background-color: var(--light-grey); }
+      .accordion-item { margin-bottom: 1rem; border: 1px solid var(--mid-grey); border-radius: 4px; }
+      .accordion-header { width: 100%; text-align: left; padding: 1rem; background: var(--white); color: var(--navy); font-family: 'Montserrat', sans-serif; font-weight: 700; border: none; cursor: pointer; display: flex; justify-content: space-between; }
+      .accordion-content { padding: 0 1rem; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out, padding 0.3s ease; background: var(--light-grey); }
+      .accordion-item.active .accordion-content { padding: 1rem; max-height: 2000px; }
+      .styled-list { list-style: none; }
+      .styled-list li { position: relative; padding-left: 2rem; margin-bottom: 0.75rem; }
+      .styled-list li::before { content: '✅'; position: absolute; left: 0; color: var(--red); }
+      .numbered-red-list { counter-reset: custom-counter; list-style: none; }
+      .numbered-red-list li { counter-increment: custom-counter; margin-bottom: 1rem; padding: 1rem 1rem 1rem 3.5rem; position: relative; background: var(--light-grey); border-left: 4px solid var(--red); border-radius: 4px; }
+      .numbered-red-list li::before { content: counter(custom-counter); position: absolute; left: 0.5rem; top: 50%; transform: translateY(-50%); background: var(--red); color: var(--white); width: 24px; height: 24px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.8rem; }
+      footer { background: var(--navy); color: var(--white); text-align: center; padding: 2rem; border-top: 4px solid var(--red); }
+      footer p { margin-bottom: 0.5rem; font-size: 0.9rem; }
+      #back-to-top { position: fixed; bottom: 2rem; right: 2rem; background: var(--navy); color: var(--white); width: 40px; height: 40px; border-radius: 50%; text-align: center; line-height: 40px; text-decoration: none; font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.3); display: none; z-index: 1000; }
+      @media (max-width: 992px) {
+        #sidebar { transform: translateX(-100%); }
+        #sidebar.open { transform: translateX(0); }
+        #main-content { margin-left: 0; width: 100%; }
+        #menu-toggle { display: block; }
+        section { padding: 3rem 1.5rem; }
+      }
+      .resource-bar { background: var(--navy); color: var(--white); border-left: 6px solid var(--red); border-radius: 4px; padding: 1.25rem 1.5rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap; margin: 2rem 0; }
+      .resource-bar h3 { color: var(--white); margin: 0; flex-shrink: 0; }
+      .resource-btn { display: inline-block; background: var(--red); color: var(--white); padding: 0.6rem 1.25rem; border-radius: 4px; text-decoration: none; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.9rem; cursor: pointer; border: none; transition: background 0.2s, transform 0.2s; }
+      .resource-btn:hover { background: #aa0000; transform: translateY(-2px); }
+      .resource-btn-group { display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center; }
+      .resource-btn-dl { display: inline-block; background: transparent; color: var(--white); padding: 0.55rem 1rem; border-radius: 4px; text-decoration: none; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.85rem; border: 2px solid rgba(255,255,255,0.45); transition: border-color 0.2s; white-space: nowrap; }
+      .resource-btn-dl:hover { border-color: var(--white); color: var(--white); }
+      .plays-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin: 1.5rem 0; }
+      .play-card { background: var(--white); border: 1px solid var(--mid-grey); border-top: 4px solid var(--navy); border-radius: 4px; padding: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.07); }
+      .play-card h4 { font-family: 'Montserrat', sans-serif; color: var(--navy); font-size: 1.1rem; margin-bottom: 0.75rem; text-transform: uppercase; letter-spacing: 1px; }
+      .play-card p { font-size: 0.9rem; color: #555; }
+      .info-note { background: #fff8e1; border-left: 4px solid #f0a500; border-radius: 4px; padding: 1rem 1.25rem; margin-top: 1.5rem; font-size: 0.95rem; }
+      .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.78); z-index: 9999; align-items: center; justify-content: center; padding: 1rem; }
+      .modal-overlay.open { display: flex; }
+      .modal-box { background: var(--white); width: 100%; max-width: 960px; height: 88vh; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column; border-top: 6px solid var(--red); box-shadow: 0 24px 64px rgba(0,0,0,0.55); }
+      .modal-header { display: flex; align-items: center; justify-content: space-between; background: var(--navy); color: var(--white); padding: 0.75rem 1.25rem; flex-shrink: 0; gap: 1rem; }
+      .modal-header h4 { color: var(--white); margin: 0; font-size: 0.95rem; font-family: 'Montserrat', sans-serif; }
+      .modal-close-btn { background: var(--red); color: var(--white); border: none; padding: 0.4rem 1rem; border-radius: 4px; cursor: pointer; font-weight: 700; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; flex-shrink: 0; transition: background 0.2s; }
+      .modal-close-btn:hover { background: #aa0000; }
+      .modal-dl-link { color: rgba(255,255,255,0.75); font-size: 0.8rem; text-decoration: underline; font-family: 'Open Sans', sans-serif; white-space: nowrap; }
+      .modal-dl-link:hover { color: var(--white); }
+      .modal-iframe { flex: 1; width: 100%; border: none; background: #f0f0f0; }
+      .video-section-wrap { margin: 1rem 0; }
+      .video-section-wrap h5 { font-family: 'Montserrat', sans-serif; color: var(--navy); font-size: 0.95rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
+      .html-video { width: 100%; border-radius: 6px; background: #000; display: block; max-height: 420px; border: 2px solid var(--mid-grey); }
+      .video-format-badge { display: inline-block; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 3px; margin-left: 6px; vertical-align: middle; font-family: 'Montserrat', sans-serif; letter-spacing: 0.5px; }
+      .badge-safari { background: #f0a500; color: #000; }
+      @media print {
+        #sidebar, #menu-toggle, #back-to-top { display: none !important; }
+        #main-content { margin-left: 0; width: 100%; }
+        body { background: white; color: black; }
+        .hero, .callout, section, .card { background: white !important; color: black !important; border: none !important; box-shadow: none !important; page-break-inside: avoid; }
+        h1,h2,h3,h4,h5,h6 { color: black !important; }
+        .accordion-content, .tab-content { display: block !important; max-height: none !important; padding: 1rem 0 !important; }
+        table th { background-color: #ddd !important; color: black !important; }
+      }
+    </style>
 </head>
 <body>
-    <h1>Welcome to the Playbook</h1>
-    <p>This is the content of the playbook...</p>
+    <button id="menu-toggle">☰ Menu</button>
+
+    <nav id="sidebar">
+      <h2>GB Playbook</h2>
+      <ul>
+        <li><a href="#cover" class="nav-link">Cover</a></li>
+        <li><a href="#section-1" class="nav-link">1. Programme Identity</a></li>
+        <li><a href="#section-2" class="nav-link">2. The Maths of Winning</a></li>
+        <li><a href="#section-3" class="nav-link">3. Offensive System</a></li>
+        <li style="padding-left: 1.25rem; margin-bottom: 0.25rem;"><a href="#section-36" class="nav-link" style="font-size: 0.82rem; padding: 0.3rem 0.5rem;">↳ Zone Offence</a></li>
+        <li style="padding-left: 1.25rem; margin-bottom: 0.25rem;"><a href="#section-37" class="nav-link" style="font-size: 0.82rem; padding: 0.3rem 0.5rem;">↳ The PUSH</a></li>
+        <li style="padding-left: 1.25rem; margin-bottom: 0.25rem;"><a href="#section-38" class="nav-link" style="font-size: 0.82rem; padding: 0.3rem 0.5rem;">↳ Special Situations</a></li>
+        <li><a href="#section-4" class="nav-link">4. Defensive System</a></li>
+        <li><a href="#section-5" class="nav-link">5. Individual Development</a></li>
+        <li><a href="#section-6" class="nav-link">6. Camp Feedback</a></li>
+        <li><a href="#section-7" class="nav-link">7. Coach Appendix</a></li>
+      </ul>
+    </nav>
+
+    <div id="main-content">
+
+      <!-- COVER -->
+      <section id="cover" class="hero">
+        <div class="hero-content">
+          <h1>GB MAXI BASKETBALL</h1>
+          <h2>F50+ Women's Programme — Master Playbook 2025–26</h2>
+          <p>Road to Athens | European Championships 2026</p>
+          <p class="tagline">Play Hard. Play Smart. Play Together.</p>
+        </div>
+      </section>
+
+      <!-- SECTION 1 -->
+      <section id="section-1">
+        <h2>SECTION 1 — PROGRAMME IDENTITY</h2>
+
+        <h3>1.1 Mission, Vision &amp; Values</h3>
+        <div class="callout">
+          <p><strong>Mission:</strong> To produce a World Class Basketball programme.</p>
+          <p><strong>Vision:</strong> To create a performance environment in which staff and players can achieve their personal best and realise their elite potential.</p>
+        </div>
+        <p><strong>Values:</strong> Team First | Resilient | Respectful | Ruthless | Integrity | Innovate | Collaborate | Work Hard</p>
+
+        <h3 style="margin-top: 2rem">1.2 The Golden Threads</h3>
+        <div class="card-grid">
+          <div class="card"><h3>🏋️ Physically Robust</h3><p>Be the best version of you; compound small habits and discipline.</p></div>
+          <div class="card"><h3>🛡️ Defensively Resilient</h3><p>Heart, Hustle and Heavy Disruption.</p></div>
+          <div class="card"><h3>🧠 High Basketball IQ</h3><p>Understand the why.</p></div>
+          <div class="card"><h3>💪 Mentally Tough</h3><p>Growth mindset; emotional control under pressure; leave your ego at the door.</p></div>
+        </div>
+
+        <h3>1.3 Team Philosophy &amp; Culture</h3>
+        <div class="tabs">
+          <div class="tab-buttons">
+            <button class="tab-btn" data-target="tab-unity">Unity</button>
+            <button class="tab-btn" data-target="tab-commitment">Commitment</button>
+            <button class="tab-btn active" data-target="tab-discipline">Discipline</button>
+          </div>
+          <div class="tab-content" id="tab-unity">
+            <p>Play together; open, honest communication; 100% responsibility; no blame culture; role acceptance; know teammates' strengths; trust each other.</p>
+          </div>
+          <div class="tab-content" id="tab-commitment">
+            <p>Do the work on and off court; commit to goals through actions, emotions, decisions; hustle on defence especially after mistakes.</p>
+          </div>
+          <div class="tab-content active" id="tab-discipline">
+            <p>Execute game plan with consistency; creativity is earned through fundamentals; see every miss as a rebound opportunity; when things are tough, execute the TEAM GAME PLAN.</p>
+          </div>
+        </div>
+
+        <h3>1.4 Team Values — the 3 Rs</h3>
+        <div class="card-grid">
+          <div class="card"><h3>RESILIENT</h3><p>Be mentally tough, physically tough, emotionally intelligent.</p></div>
+          <div class="card"><h3>RESPECTFUL</h3><p>Attitude of gratitude; do not be satisfied with wearing the badge.</p></div>
+          <div class="card"><h3>RUTHLESS</h3><p>Play with urgency from the outset; next player up mentality; TEAM FIRST.</p></div>
+        </div>
+
+        <h3>1.5 Mental Approach</h3>
+        <ul>
+          <li><strong>Flick the Switch:</strong> Basketball is a game of runs; learn, adapt, adjust, turn the tide.</li>
+          <li><strong>Play in the moment:</strong> Be the calm in the storm and focus on controllables.</li>
+          <li><strong>NBA (Next Best Action):</strong> Accept errors, keep learning; the team that adapts wins.</li>
+          <li><strong>Emotional Intelligence:</strong> Manage emotions; read teammates and opponents; communicate effectively.</li>
+        </ul>
+      </section>
+
+      <!-- SECTION 2 -->
+      <section id="section-2">
+        <h2>SECTION 2 — THE MATHS OF WINNING</h2>
+        <p><em>"To win consistently we must win four battles every game."</em></p>
+        <div class="card-grid">
+          <div class="card"><h3>1. 🏀 Win the Rebound Battle</h3><p>Limit opponent possessions, create additional opportunities; "Box Out. Pursue. Score."</p></div>
+          <div class="card"><h3>2. 🎯 Get to the Foul Line</h3><p>Attack the paint, draw fouls, convert free throws.</p></div>
+          <div class="card"><h3>3. 🔄 Win the Possession Battle</h3><p>Minimize turnovers, high-quality shot selection.</p></div>
+          <div class="card"><h3>4. 🤝 Win the Assist Battle</h3><p>Unselfish play, ball movement, transition passing.</p></div>
+        </div>
+
+        <h3>Performance Targets</h3>
+        <table>
+          <tr><th>Metric</th><th>Target</th></tr>
+          <tr><td>Shooting %</td><td>45% (3-point shooters at 40%+ get the green light)</td></tr>
+          <tr><td>Turnovers</td><td>Below 15 per game — BALL SECURITY</td></tr>
+          <tr><td>Rebounding</td><td>Over 55% per game — 'BOX' &amp; 'GLASS'</td></tr>
+          <tr><td>Free Throw %</td><td>Over 70% (minimum 20 attempts) — 'attack the paint'</td></tr>
+          <tr><td>Assists</td><td>20+ per game — 'PUSH' and 'EXTRA'</td></tr>
+        </table>
+      </section>
+
+      <!-- SECTION 3 -->
+      <section id="section-3">
+        <h2>SECTION 3 — OFFENSIVE SYSTEM</h2>
+
+        <h3>3.1 Offensive Identity</h3>
+        <div class="card-grid">
+          <div class="card"><h3>SEEK</h3><p>Scan for mismatches, poor defensive positioning, spacing breakdowns. Eyes and IQ are our weapons.</p></div>
+          <div class="card"><h3>CREATE</h3><p>When advantages don't exist, manufacture them through spacing, movement, screens, cuts, ball movement.</p></div>
+          <div class="card"><h3>EXPLOIT</h3><p>Once identified, attack decisively without hesitation. Indecision kills advantages.</p></div>
+        </div>
+
+        <h3>3.2 Offensive Objectives</h3>
+        <ul class="numbered-red-list">
+          <li>Great Spacing — spacing is king</li>
+          <li>Make two guard one — hand-offs, drives, exchanges, screens (on and off ball)</li>
+          <li>Win close-outs — attack close-outs (penetrate or pass)</li>
+          <li>Seek Mismatches — create and hunt mismatches</li>
+        </ul>
+
+        <h3>3.3 The 4-Out 1-In Motion Offense</h3>
+        <p><strong>Benefits:</strong> Creates Optimal Spacing, Develops Basketball IQ, Exploits Mismatches, Emphasizes Movement and Pace, Difficult to Scout, Utilises the Post Player.</p>
+
+        <div class="callout red-bg">
+          <h3>Post Player Rules</h3>
+          <ul style="margin-left: 1.5rem">
+            <li>ALWAYS start on weak side (opposite ball)</li>
+            <li>Flash to strong side ONLY for sealing opportunities or specific actions</li>
+            <li>Duck-in for 2-count on ball reversals</li>
+            <li>Pin defenders on corner passes</li>
+          </ul>
+        </div>
+
+        <h3>3.4 Fundamental Reads</h3>
+        <div class="card-grid">
+          <div class="card">
+            <h3>1. SLOT TO WING — "THE WAVE"</h3>
+            <p><strong>Trigger:</strong> Slot-to-Wing pass</p>
+            <p><strong>Action:</strong> Passer immediately basket cuts — ALWAYS CUT TO SCORE</p>
+          </div>
+          <div class="card">
+            <h3>2. BALL REVERSAL / DOUBLE</h3>
+            <p><strong>Trigger:</strong> Ball reverses slot-to-slot</p>
+            <p><strong>Action:</strong> Weak side players exchange positions</p>
+          </div>
+          <div class="card">
+            <h3>3. WING TO POST — SPLIT</h3>
+            <p><strong>Trigger:</strong> Wing-to-Post pass</p>
+            <p><strong>Action:</strong> Passer screens away for nearest player</p>
+          </div>
+          <div class="card" style="border-top-color: var(--red);">
+            <h3>4. BALL SCREENS</h3>
+            <p><strong>Types:</strong> UP &nbsp;/&nbsp; DOWN &nbsp;/&nbsp; FIST &nbsp;/&nbsp; TWIX</p>
+            <p style="margin-top: 0.5rem;"><strong>Call "RED"</strong> — late shot clock signal (&lt;6 sec) triggering an immediate ball screen for the called player.</p>
+            <p style="margin-top: 0.5rem;">Ball handler reads: <strong>USE / IGNORE / SPLIT / SNAKE</strong> the screen based on defensive alignment.</p>
+          </div>
+        </div>
+
+        <div class="callout">
+          <h3>Perimeter Rules</h3>
+          <ul class="styled-list">
+            <li>Always fill the spot closest to the ball</li>
+            <li>Fill to open corners once inside 3-point line</li>
+            <li>After passing: BASKET CUT or SCREEN AWAY — always one or the other</li>
+            <li>If ball is dribbled AT you: BACK CUT immediately</li>
+            <li>Move after every pass — no standing still</li>
+          </ul>
+        </div>
+
+        <h3>3.5 Screening Concepts</h3>
+        <p><strong>OFF-BALL SCREENS:</strong> Slot-to-Slot Away Screen, Post Player Away Screens. Options: CURL / STRAIGHT CUT / BACK CUT / FLARE.</p>
+        <p><strong>ON-BALL SCREENS:</strong> Slot Lift Screen, Wing Screen. Reads: USE / IGNORE / SPLIT / SNAKE.</p>
+
+        <!-- Motion Offense PDF Resource -->
+        <div class="resource-bar">
+          <h3>📄 Full Motion Offense Reference</h3>
+          <div class="resource-btn-group">
+            <button class="resource-btn" onclick="openPDFModal('https://www.genspark.ai/api/files/s/lx9WNlyR?token=Z0FBQUFBQnAwT2xQOHZZS0JKTDY3VHNWaHd3MnkyNnVDWl9jS29uVFFfMlZrSE9hNDc2ZExRSHJ5UFZMSXJOVGhzZkxLYkM3UzhnaXcwVk1NNGo0QVp1dmZTMUhQdU5xc1pPUERhTV9iR0RuX0hQczdidnY1YUgxQmM3VE05b2c0NTdtbmdWMGtoRWVqVGRGY2JtbzhlTHNuWE1CVmVNZkl3VUhKSzQ4dFBOUGQwTDhSRGJkYXNMTzVLR2pld3RDMHBGUF84S0hXWktnMFRJUEpGcEhCdkZ5bVdIZUpKMndlcHZodHdfbjM5Ty01ekNVNk1iZjM2SlN1UkN5cjhvaEdDWjlRaXdQTnpuSGljZ3ZtejFwWmtBUHEwWndnejlCVVE9PQ', '4-Out 1-In Motion Offence')">📖 View in Playbook</button>
+            <a href="https://www.genspark.ai/api/files/s/lx9WNlyR?token=Z0FBQUFBQnAwT2xQOHZZS0JKTDY3VHNWaHd3MnkyNnVDWl9jS29uVFFfMlZrSE9hNDc2ZExRSHJ5UFZMSXJOVGhzZkxLYkM3UzhnaXcwVk1NNGo0QVp1dmZTMUhQdU5xc1pPUERhTV9iR0RuX0hQczdidnY1YUgxQmM3VE05b2c0NTdtbmdWMGtoRWVqVGRGY2JtbzhlTHNuWE1CVmVNZkl3VUhKSzQ4dFBOUGQwTDhSRGJkYXNMTzVLR2pld3RDMHBGUF84S0hXWktnMFRJUEpGcEhCdkZ5bVdIZUpKMndlcHZodHdfbjM5Ty01ekNVNk1iZjM2SlN1UkN5cjhvaEdDWjlRaXdQTnpuSGljZ3ZtejFwWmtBUHEwWndnejlCVVE9PQ" target="_blank" class="resource-btn-dl">⬇ Download PDF</a>
+          </div>
+        </div>
+
+        <!-- 3.6 Zone Offence -->
+        <h3 id="section-36" style="margin-top: 2.5rem;">3.6 Zone Offence</h3>
+        <p>These video walkthroughs cover our primary zone-beating sets. Study the spacing, ball movement, and scoring actions — know your role in each system before we take them live.</p>
+
+        <div class="plays-grid">
+          <div class="play-card">
+            <h4>🏀 HORNS — Zone Offence (1)</h4>
+            <div class="video-section-wrap">
+              <video class="html-video" controls preload="metadata">
+                <source src="https://www.genspark.ai/api/files/s/qzxTNiGT?token=Z0FBQUFBQnAwVU9XMTNNX3VXSzhYUXUzbzVIZlV5LVZTTkFuTjl5czVodVVhMHNfVDl3cEpaV3U1NmhpRU9hWDlUU1JxakJoTWZEa3I1NDdBdHJvNjM2WEx3YllCcDZGWlVKdk1PZlhHNlRSRlRteGNfbGkxVFdodlJuYU90WnRkcS1JaDRjVUdBaENjckp3Q1ljMDhFVVMzMkoyc0VnTkpyWW9qS01lSUNwSkozTGNOZVlfZEdTNU9kWVk3ZUhRRUM1cnBybW1FYkhOZkUwOW5XbjFGTnZHSFJXRVZqd3JHR3Z5eGQxaVdYbDVyanhUWGV5MGV5dDZTSEpKNnZUZV9RWEUtbWdOdU9DNzlkWW9XMTRkNHJMN1NFcjBaSXBNYlE9PQ" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p>Horns set attacking zone — initial alignment and first scoring options.</p>
+          </div>
+          <div class="play-card">
+            <h4>🏀 HORNS — Zone Offence (2)</h4>
+            <div class="video-section-wrap">
+              <video class="html-video" controls preload="metadata">
+                <source src="https://www.genspark.ai/api/files/s/zgFVD8LL?token=Z0FBQUFBQnAwVU9XYjRXUXJocGpjTmJweTd1M2UzSkpyU0ppQnE3Q3gxWXNZOFI2TVhudmtEOU40Ynl6VVBmSXBOZWJFejRwaW12UV9LVGlCOVJJaXo3VHVCR0ZQVXp4emVXa2RKNFlZcU95WUJjcFA3OEEtT0MycEJDODRuaEVrU2ozUmpjSExJSG9CMG50WDJsY2NiZTVrc3lsYkg4Ty13SmliclM4MkpWWkctM2dZaklKZ285aU5naFdrV0NjVkxCbHVxbHMweXV5bTVlV29hR2Q1bHh3dFp1X1lNcnJQQVNaTHpNQU9RamluWHFyU1BkN3RqVWlIVDNqZlVKOWk2b0hpQWFPUWIyMVRqaDhTQWtEOTlkRkhTRndnbnBoVkE9PQ" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p>Horns continuation — secondary actions and adjustments against zone shifts.</p>
+          </div>
+          <div class="play-card">
+            <h4>🏀 HIGH-LOW — Zone Offence (1)</h4>
+            <div class="video-section-wrap">
+              <video class="html-video" controls preload="metadata">
+                <source src="https://www.genspark.ai/api/files/s/SjeXDarf?token=Z0FBQUFBQnAwVU9YQnBUenJaay1wUmpsUVlCSVVtUWJ4Tk9sS0x5ODloVFZrUHlZYlB1bGY1Y1VDVWFhWlVLY0Q2cTJyY0ZOVFRNeG9wQXZlMGJyTVdhbFFNSmI0QlZHNUJfSDBSb1VMVTRVQTJ0RFRmR1ZZOFEzX3lxd0NSQVNWMWg5N3VPUkt6aVdhUEVpQnZwcW1sX1dSSnN5cUFSTjVuZXZsNWNEaVl2dFRqSm5oNWlvZVJDZDBRdVMxMjljUjEwblNFY1oyeVRGYnh1MTJBdTJwbU1mTDFfNTNnREZTd0I5U2gwdklRVGZ4a0hLZkx1YkFocDhWMzZXbWFoVHhqeHNMTFdkMHdHdEVUU0thbDZVSnJzb2dqLV92dGtnekE9PQ" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p>High-Low action — exploiting gaps between the top and bottom of the zone.</p>
+          </div>
+          <div class="play-card">
+            <h4>🏀 HIGH-LOW — Zone Offence (2)</h4>
+            <div class="video-section-wrap">
+              <video class="html-video" controls preload="metadata">
+                <source src="https://www.genspark.ai/api/files/s/h84y1D8P?token=Z0FBQUFBQnAwVU9YdzhpOUFhNkhYdlhta3JPVVZuTDlSU3NkWnh4U29IOW9mUGJEOGttVmJ6MlhGaTViUS1Ic3VVbTRaVGt2TjNYU2hXSWZWRUpEUU9XZWFrN0x1cWJGOExNanVkWGJhMS1kWVlRNmZQYk91My1FdUs4WTVSRWZTWlRJMVFXLTdBNk9fdUFBWFA2a0U5TWRCZHBiSEhSRmpWSFh1c2llWURFWjZ1SHlOLUd4SXcxVUF1Y2VZYWNzQjBiQ29OcExtbFhoTF9JTXhlb1JHZTFwVjZNWkZJOVBmRkFZSkNxWE5iLVo1YnhuOEJKZHAtOUxLSzdpQUpYRmxEVm1rdGxlZkJnRkpaZlF5bzh4bnNkRVJiVkFrRnllV1E9PQ" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p>High-Low continuation — reading and attacking zone rotations.</p>
+          </div>
+        </div>
+
+        <!-- 3.7 The PUSH -->
+        <h3 id="section-37" style="margin-top: 2.5rem;">3.7 Transition Offence — The PUSH</h3>
+        <p><em>"Win the rebound — win the race."</em> The PUSH is our transition system and the engine behind the Rebound &amp; Run principle. Every player must know their role from the moment the ball is secured.</p>
+
+        <ul class="numbered-red-list">
+          <li><strong>Secure the Rebound — GLASS</strong><br>Crash the glass with intent; secure possession before thinking about transition.</li>
+          <li><strong>Outlet — Butt to sideline, then PUSH</strong><br>Rebounder pivots away from the defence — butt to the sideline — and fires the outlet pass to push the ball into the middle.</li>
+          <li><strong>Fill the Lanes — sprint wide</strong><br>Non-rebounders immediately sprint to fill the wide lanes. One player on each side of the floor, stretching the defence.</li>
+          <li><strong>Early Pass — pass ahead</strong><br>Push the ball ahead whenever a scoring advantage exists. Don't dribble what you can pass.</li>
+          <li><strong>Trailers fill the Slot Spots</strong><br>The two trailing players fill the slot positions to provide floor balance and secondary scoring options.</li>
+          <li><strong>DRAG Pick &amp; Roll — SLOT to SLOT</strong><br>If the defence stops the initial advantage, the trailing ballhandler calls the DRAG screen. Slot-to-slot ball screen — read the coverage: USE / IGNORE / SPLIT / SNAKE.</li>
+        </ul>
+
+        <div class="video-section-wrap" style="margin-top: 1.5rem;">
+          <h5>🎬 DOWN — Transition Offence Walkthrough</h5>
+          <video class="html-video" controls preload="metadata">
+            <source src="https://www.genspark.ai/api/files/s/UicFPhSM?token=Z0FBQUFBQnAwVU9YVXVjempFbERMU2xmdlBnOEhLWGZjbzg5eG55UXM3ZTh6cGZGR29HUTZha1FHN0FaZzdaRy1TZWpCa0ExMXFqTXhNMUpyNWdfem94YXQza2lWVmxPTFpQVUMwWjE3ekswVThTOGppcmJYNGl0LWhIbVJOeU1LbXQ0aVNxMFh6TjE2Vi1OY0gwYkJJZ2EwZ2Z2ZFNLS2R6Z0M1YVNqcmJMam94VEp0SzZBRzZSQzQ1MklSTkdiUGJoS1BOc2VaQUMtcHJ0TWdVUW84dUI3dUtLWi04a3JPTDhJS001R3JrZXpPTnZ3N295dC1OSW5zcDA1RXd2UGNDcm1ac202bHJGX2FDWDgxcy12Zkc0WWZ4Q0J4d05Hd1E9PQ" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- 3.8 Special Situations -->
+        <h3 id="section-38" style="margin-top: 2.5rem;">3.8 Special Situations — Set Plays</h3>
+        <p>The following set plays are used in specific game situations. Know your role in each action and be ready to execute on the coach's call.</p>
+
+        <div class="plays-grid">
+          <div class="play-card">
+            <h4>🏀 SIDE — Sideline Out of Bounds</h4>
+            <div class="video-section-wrap">
+              <video class="html-video" controls preload="none">
+                <source src="https://www.genspark.ai/api/files/s/I0d7J90i?token=Z0FBQUFBQnAwVU9XTU9yMkNGMlFqZVcwMU5MSnlDdWF4UXFYRHk3T2R2Z2M5VFFCWHIxZGpiR2laMTJ1Uy1PMTNrWHF3aUt4ZU80bmZiaFJZeENLblpwekxROUZKRUR0My12cFJRMHVVNWtsZVhZUDVpRml6SFZiQUNvZGlEUkItdkFpd3BLLXhXZS1PT2tUbDFHTlRjZGJFTHZJemRJSkNScjRpMWphM2lIQjRLcWlhX19Qa09IbkVMdnVGXzdwU2NFckxjOVB4SGlZcy04d2dIY2gyNU5QWUthVXFSVGdMTnhkb3UwWmdFaHIwOW42UFBLUy0wZVgzTHpIaDRfcDAxM0VwZVJkamxNUm9JX3FNbXI1R0FoNWpjMUNBTlg4T1E9PQ" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p><strong>Sideline out-of-bounds.</strong> Attack quickly from the wing or corner — initiate action before the defence can set.</p>
+            <p style="font-size: 0.8rem; color: #888; margin-top: 0.5rem;">⚠️ Large file — click Play to stream.</p>
+          </div>
+          <div class="play-card">
+            <h4>🏀 DOUBLE — Baseline Out of Bounds</h4>
+            <div class="video-section-wrap">
+              <video class="html-video" controls preload="none">
+                <source src="https://www.genspark.ai/api/files/s/biOx6B20?token=Z0FBQUFBQnAwVU9XaDRRRjNWSzIzV0dpb1V2MFZpbjl2M2l0ckFZbG1YMkVYc3p3WkRxY1RUMlRzeXJ2cThMaENWZmRWVVljX05FM2xYbGFDN2wwSkxKMDloR2UzUkZ3TzB0cjlSTzVWOWFvU2pYVi0zYURFSDl2UHBoQUxMRE9ZY09oMFk1RVhtUlVUakVFYlhGbGFfMGU4Y1JKSXlzUENfN1JibFYycVRQR3N3dk5qdHdVSDAtWjFDRnl0Q2NscVI3RUppTF8ya0l2dUk2Tm1NQjNXMjJNZWI0emZYVm5fcFEyUWZaSUQyU3JLVUE3SVdMcmdxajJvUndPTE9qT1JaS0RnOXlTbVg1Z3c1NWJYS0phZHBIRVdFQTBRSzdqVmc9PQ" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p><strong>Double screen action.</strong> Two coordinated screens release a shooter or cutter for a high-quality, uncontested look.</p>
+            <p style="font-size: 0.8rem; color: #888; margin-top: 0.5rem;">⚠️ Large file — click Play to stream.</p>
+          </div>
+          <div class="play-card">
+            <h4>🏀 BOX — Baseline Out of Bounds</h4>
+            <div class="video-section-wrap">
+              <video class="html-video" controls preload="none">
+                <source src="https://www.genspark.ai/api/files/s/uGzME6Dc?token=Z0FBQUFBQnAwVU9XRVhnWWlWcVlZZ3d0X0kxdmFSZTJXcDc1aC05N0FmcUx0M1RWeGdjR0N6cHZKbUhTUkItVFRQb3phclF1OTktcUwzbU1PNkUydzhSRkNzcWxsTWRKU21MY1Z6ZnlzV1Zkbk93bUhwVXV3dksta0ZQMkUxdDhZWmI4NjZrT0gwc0RPLW1mUjlzRVVabWNmd25KWjk3eDV3ZHF0b013dlZVMF9TcHhTZmk5YWx5cXY4MUVXSC1hY2tqazVKYzFtNGRvLWRGaVNOM0ZpMVl2dE9ZSnRLYUtpRFlTUEdkUDlEOUxmVVllZmM4eTA0ZVRuYlA5NE9KSWVvWjAtQVBPd2t1Vm4zeU8tMTNxUHFNUjVwZVlROWl0aGc9PQ" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p><strong>Box formation inbound.</strong> Use to free up shooters and cutters from a box set — split the defence with coordinated movement.</p>
+            <p style="font-size: 0.8rem; color: #888; margin-top: 0.5rem;">⚠️ Large file — click Play to stream.</p>
+          </div>
+          <div class="play-card">
+            <h4>🏀 HEAD TAP — After Time Out (ATO)</h4>
+            <div class="video-section-wrap">
+              <video class="html-video" controls preload="metadata">
+                <source src="https://www.genspark.ai/api/files/s/LnO2E8iD?token=Z0FBQUFBQnAwVU9YVVFDYmJ6T0UwTU1xSUxkYUNJb05rT1huUWJSd1J0M3Bpckh6ejIxTDJpalZJQjU5UVNFR2JVN3NHVmhzUl91M0xmcGpBS1BqVEFLMWhtRzQ4VmdyRTVPanI5NmdyakVGaXJKWVVtUEtaMUt6Zy1uUTFFZlRndU93ZmNqY2Zrcjk0T3VJQmdpelZUdG4ycElVR2pDMzduam12V04ya3E5dEo5eWVYOXFUTllVZnJRQWhsYl9qWUZyM21VbTd4NndXa2x2Rk1PemVZQW9ydk1iSTVEdnpmNVRpOGYyVDE5bDg0d3dfQy1ITkVUR3dKSVk0Qm9falRBU0d3T296dVhlX2VPemdpY1JsdXhYQXE2ZmZxaU9uT0E9PQ" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            <p><strong>ATO set for a clean shot.</strong> Use when you need a high-percentage look coming out of a timeout. Execute with pace and precision.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4 -->
+      <section id="section-4">
+        <h2>SECTION 4 — DEFENSIVE SYSTEM</h2>
+        <div class="callout">
+          <h2>"Nothing Easy — Anticipate. Disrupt. Defend."</h2>
+        </div>
+
+        <h3>4.2 Seven Defensive Non-Negotiables</h3>
+        <ul class="numbered-red-list">
+          <li>STANCE at all times — point of attack, once away, help-side</li>
+          <li>Talk and echo every trip — matchups, screens, tags, calls</li>
+          <li>Contest the outlet — clean the glass below the foul line</li>
+          <li>No defending in dead space — no gambling between the lines</li>
+          <li>Contain first — pressure with feet; no reaching, no gambling</li>
+          <li>Talk screens early — NEVER go under on shooters</li>
+          <li>Box out before rebounding — finish every possession</li>
+        </ul>
+
+        <h3 style="margin-top: 2rem">4.5 Defensive Coverages &amp; Play Call System</h3>
+        <div class="card-grid">
+          <div class="card"><strong>1</strong> = HALF COURT MAN</div>
+          <div class="card"><strong>51</strong> = FULL COURT MAN</div>
+          <div class="card"><strong>52</strong> = FULL COURT ZONE PRESS</div>
+          <div class="card"><strong>2</strong> = 2-3 ZONE</div>
+          <div class="card"><strong>3</strong> = 3-2 / 1-2-2 ZONE</div>
+        </div>
+
+        <!-- Defensive Handbook PDF -->
+        <div class="resource-bar" style="margin-top: 2rem;">
+          <h3>📄 Full Defensive Handbook</h3>
+          <div class="resource-btn-group">
+            <button class="resource-btn" onclick="openPDFModal('https://www.genspark.ai/api/files/s/2vGIgNBb?token=Z0FBQUFBQnAwT2xXQzlZZUVhNUp6c3otRWJiMEo2VGVJQllqcURuZkNHNXVJa0RFTlBBYWZkZ253VGdkVmNELUoyYmljdnFQYUoyQ25qMTBsd0JVc3JOU2dWSGYtMGdzR1p4ZFh5bUFFTFhsMWZkR3FJdTN6OFdBdnlrVEdLdmdXQ05rQ2Z4eG5ZaUhYaXZPR3hkajNsTXA3bzhtQTFXdW90MmtnTklvRjhXQ193S0FvQ0ZLX2VURzV2RlcxM1hKa3dHVEViSDlQVmZGbUlsaFhmbmI1V2FpWlB4S3VPaERMSVRJaTNrUG5EQTRaTFNRRkVmRnNIeV9ock1hcHpuUS14LW9YYmMxMEdZNzV0aFg5YVVEUEJIYk8xYzdnMnFCRmc9PQ', 'F50+ Defensive Handbook')">📖 View in Playbook</button>
+            <a href="https://www.genspark.ai/api/files/s/2vGIgNBb?token=Z0FBQUFBQnAwT2xXQzlZZUVhNUp6c3otRWJiMEo2VGVJQllqcURuZkNHNXVJa0RFTlBBYWZkZ253VGdkVmNELUoyYmljdnFQYUoyQ25qMTBsd0JVc3JOU2dWSGYtMGdzR1p4ZFh5bUFFTFhsMWZkR3FJdTN6OFdBdnlrVEdLdmdXQ05rQ2Z4eG5ZaUhYaXZPR3hkajNsTXA3bzhtQTFXdW90MmtnTklvRjhXQ193S0FvQ0ZLX2VURzV2RlcxM1hKa3dHVEViSDlQVmZGbUlsaFhmbmI1V2FpWlB4S3VPaERMSVRJaTNrUG5EQTRaTFNRRkVmRnNIeV9ock1hcHpuUS14LW9YYmMxMEdZNzV0aFg5YVVEUEJIYk8xYzdnMnFCRmc9PQ" target="_blank" class="resource-btn-dl">⬇ Download PDF</a>
+          </div>
+        </div>
+
+        <div class="video-section-wrap" style="margin-top: 1.5rem;">
+          <h5>🎬 4.6 — 2-3 Match-up Zone Defence Walkthrough</h5>
+          <video class="html-video" controls preload="none">
+            <source src="https://www.genspark.ai/api/files/s/KBkZ7Ex4?token=Z0FBQUFBQnAwVU83LWltWFhrdEJEUHpwUTlLSXlOdHl4YXZTeFlnTzJnSXZDeTFlV01nTV9NVW9WSlFPVUhxYk1fdkJJWkpNdm1PV2xwN1lINVdRRDFxLWxUVGoxeENpQ3BCUkdTU2VzZ3pZSzNiNlpuTWt2Tk5vcDN2bHVnbUlBeVN0YUZxZWtuQk9zSEFJeDlIb1U0aGNuT1NqTGladzNvWjhRU3JMcDk3dUdTZkpITGFjYkkweTJ0R0hSbHp1Rmo5QzZFQjF5TkFucldLaDByQUh3QXVVUlRlMGlULWprWFV5TmlQRGtvRkF6TDhPaGZNeVpmYzhla3pPRGptSHV3SThuNXlNM1lYOHFZN1RaQVdNMk5NcHUwZGtZSmRjQkE9PQ" type="video/quicktime">
+            Your browser does not support the video tag.
+          </video>
+          <div class="info-note" style="margin-top: 0.75rem; margin-bottom: 0;">
+            <p><span class="video-format-badge badge-safari">MOV</span> <strong>Safari only</strong> — this file is in MOV format (2.2 GB) and plays natively on <strong>Safari (Mac/iPhone)</strong>. Chrome &amp; Firefox users: convert to MP4 for cross-device playback. Use <a href="https://www.handbrake.fr" target="_blank">HandBrake</a> (free, desktop) or <a href="https://cloudconvert.com" target="_blank">CloudConvert</a> (online).</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5 -->
+      <section id="section-5">
+        <h2>SECTION 5 — INDIVIDUAL DEVELOPMENT</h2>
+        <p><em>"We have limited team court time; your high-quality reps off-court are our competitive edge."</em></p>
+
+        <div class="accordion">
+          <div class="accordion-item">
+            <button class="accordion-header">BLOCK A — SKILL WORK (30-45 min) <span>▼</span></button>
+            <div class="accordion-content">
+              <p><strong>Finishing:</strong> Mikan + reverse (25/25), Bump finishes, Chase-down lay-ups.</p>
+              <p><strong>Creating:</strong> Slot 1v0 → 1v1 "paint or pass", P&amp;R pocket series.</p>
+              <p><strong>Passing:</strong> Wall targets, Pivot series into passes.</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">BLOCK B — PHYSICAL PREPARATION (35-50 min) <span>▼</span></button>
+            <div class="accordion-content">
+              <p><strong>Strength:</strong> Goblet squat + RDL, Pallof press, dead bug.</p>
+              <p><strong>Endurance:</strong> Court intervals (30s on/30s off), Shuttle "17s".</p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button class="accordion-header">BLOCK C — MENTAL SKILLS (3-5 min) <span>▼</span></button>
+            <div class="accordion-content">
+              <p>Framing (What's Next?), Breathwork, Confident self-talk.</p>
+            </div>
+          </div>
+        </div>
+
+        <h3 style="margin-top: 2rem">5.2 Role Clarity — Own Your Lane</h3>
+        <div class="callout red-bg">
+          <p>"Know exactly how you impact winning. If you're an elite spacer, screener, rebounder, or organiser — double down."</p>
+        </div>
+      </section>
+
+      <!-- SECTION 6 -->
+      <section id="section-6">
+        <h2>SECTION 6 — CAMP FEEDBACK &amp; SEASON PROGRESS</h2>
+        <h3>6.1 Camp 5 Summary — March 2026</h3>
+        <table>
+          <tr><th>KEEP</th><th>START</th><th>STOP</th></tr>
+          <tr>
+            <td>Staying together, commitment to spacing, weak-side movement, pressuring ball.</td>
+            <td>Communicating early, matching up in transition, boxing out (hit first).</td>
+            <td>Ball-watching, breaking down after one trigger, gambling in dead space.</td>
+          </tr>
+        </table>
+
+        <h3>6.2 Actionable Next Steps</h3>
+        <ul class="numbered-red-list">
+          <li>Accountability Buddies — confirm colour + psychology one-pagers</li>
+          <li>Half-Court Org Under Fatigue — "Spacing → Call → Execute → Flow"</li>
+          <li>Defensive Transition Standard — match up + close gaps</li>
+          <li>Rebounding Habit — box-out grade to live segments</li>
+          <li>Coaches' Feedback + Playbook</li>
+        </ul>
+      </section>
+
+      <!-- SECTION 7 -->
+      <section id="section-7" class="appendix-section">
+        <h2>SECTION 7 — COACH APPENDIX</h2>
+        <h3>7.1 Coach Expectations 2025-26</h3>
+        <ul class="numbered-red-list">
+          <li><strong>Purpose &amp; Scope:</strong> Set shared standard for coaching, leadership, behaviour.</li>
+          <li><strong>Philosophy:</strong> "Performance Basketball, Serious Fun". Target Top 4.</li>
+          <li><strong>Commitment:</strong> 100% attendance target, punctuality.</li>
+          <li><strong>Head Coach Role:</strong> Lead basketball, collaborate, session publication 48hrs prior.</li>
+          <li><strong>Assistant Coach Role:</strong> Support and challenge, no ego coaching.</li>
+          <li><strong>Practice Standards:</strong> Teach the WHY, as much 5v5 as possible, constraints-led.</li>
+        </ul>
+      </section>
+
+      <!-- FOOTER -->
+      <footer>
+        <p>RESILIENT • RESPECTFUL • RUTHLESS | GB Maxibasketball | Team First | World Class | Coach CJ Lee — Programme Lead</p>
+        <p>© 2025–26 GB Maxibasketball F50+ Women's Programme | Road to Athens</p>
+        <p><small>Download this playbook as PDF: File → Print → Save as PDF</small></p>
+      </footer>
+    </div>
+
+    <!-- PDF Viewer Modal -->
+    <div id="pdf-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-box">
+        <div class="modal-header">
+          <h4 id="modal-title">📄 Document Viewer</h4>
+          <div style="display:flex; align-items:center; gap:1rem;">
+            <a id="modal-dl-link" href="#" target="_blank" class="modal-dl-link">⬇ Open in new tab</a>
+            <button class="modal-close-btn" onclick="closePDFModal()">✕ Close</button>
+          </div>
+        </div>
+        <iframe id="pdf-iframe" src="" class="modal-iframe" title="PDF Viewer"></iframe>
+      </div>
+    </div>
+
+    <!-- Back to top -->
+    <a href="#cover" id="back-to-top">↑</a>
+
+    <script>
+      // Sidebar Toggle
+      const menuToggle = document.getElementById('menu-toggle');
+      const sidebar = document.getElementById('sidebar');
+      menuToggle.addEventListener('click', () => { sidebar.classList.toggle('open'); });
+      document.querySelectorAll('.nav-link').forEach((link) => {
+        link.addEventListener('click', () => { if (window.innerWidth <= 992) { sidebar.classList.remove('open'); } });
+      });
+
+      // Tabs
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const tabContents = document.querySelectorAll('.tab-content');
+      tabBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          tabBtns.forEach((b) => b.classList.remove('active'));
+          tabContents.forEach((c) => c.classList.remove('active'));
+          btn.classList.add('active');
+          document.getElementById(btn.dataset.target).classList.add('active');
+        });
+      });
+
+      // Accordion
+      document.querySelectorAll('.accordion-item').forEach((acc) => {
+        acc.querySelector('.accordion-header').addEventListener('click', () => { acc.classList.toggle('active'); });
+      });
+
+      // PDF Modal
+      function openPDFModal(url, title) {
+        document.getElementById('pdf-iframe').src = url;
+        document.getElementById('modal-title').textContent = '📄 ' + (title || 'Document Viewer');
+        document.getElementById('modal-dl-link').href = url;
+        document.getElementById('pdf-modal').classList.add('open');
+        document.body.style.overflow = 'hidden';
+      }
+      function closePDFModal() {
+        document.getElementById('pdf-modal').classList.remove('open');
+        setTimeout(() => { document.getElementById('pdf-iframe').src = ''; }, 300);
+        document.body.style.overflow = '';
+      }
+      document.getElementById('pdf-modal').addEventListener('click', function(e) { if (e.target === this) closePDFModal(); });
+      document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closePDFModal(); });
+
+      // Back to top & Active Nav
+      const backToTop = document.getElementById('back-to-top');
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.nav-link');
+      window.addEventListener('scroll', () => {
+        backToTop.style.display = window.scrollY > 300 ? 'block' : 'none';
+        let current = '';
+        sections.forEach((section) => { if (scrollY >= section.offsetTop - 60) { current = section.getAttribute('id'); } });
+        navLinks.forEach((link) => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) { link.classList.add('active'); }
+        });
+      });
+    </script>
 </body>
 </html>
