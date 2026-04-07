@@ -453,10 +453,10 @@
           <div class="card"><strong>3</strong> = 3-2 / 1-2-2 ZONE</div>
         </div>
 
-        <!-- Defensive Handbook PDF -->
+               <!-- Defensive Handbook PDF -->
         <div class="resource-bar" style="margin-top: 2rem;">
           <h3>📄 Full Defensive Handbook</h3>
-         <div class="resource-bar" style="margin-top: 2rem;">
+          <div class="resource-btn-group">
   <h3>📄 Full Defensive Handbook</h3>
   <div class="resource-btn-group">
     <button class="resource-btn" onclick="openPDFModal('https://docs.google.com/viewer?url=https%3A%2F%2Fcjlee1970.github.io%2FGBMaxiF50Playbook2026%2Fgb_F50_defensive_handbook.pdf&embedded=true', 'F50+ Defensive Handbook', 'https://cjlee1970.github.io/GBMaxiF50Playbook2026/gb_F50_defensive_handbook.pdf')">📖 View in Playbook</button>
@@ -638,7 +638,6 @@
   document.getElementById('pdf-modal').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
-      }
       function closePDFModal() {
         document.getElementById('pdf-modal').classList.remove('open');
         setTimeout(() => { document.getElementById('pdf-iframe').src = ''; }, 300);
