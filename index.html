@@ -101,9 +101,12 @@
       .modal-iframe { flex: 1; width: 100%; border: none; background: #f0f0f0; }
       .video-section-wrap { margin: 1rem 0; }
       .video-section-wrap h5 { font-family: 'Montserrat', sans-serif; color: var(--navy); font-size: 0.95rem; margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.5px; }
-      .html-video { width: 100%; border-radius: 6px; background: #000; display: block; max-height: 420px; border: 2px solid var(--mid-grey); }
-      .video-format-badge { display: inline-block; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 3px; margin-left: 6px; vertical-align: middle; font-family: 'Montserrat', sans-serif; letter-spacing: 0.5px; }
-      .badge-safari { background: #f0a500; color: #000; }
+      .yt-embed { width: 100%; aspect-ratio: 16/9; border-radius: 6px; border: 2px solid var(--mid-grey); display: block; }
+      .callout-warning { background: #fdf3f2 !important; border-left: 4px solid #c0392b !important; color: var(--dark-text) !important; }
+      .callout-warning h3 { color: #c0392b !important; }
+      .callout blockquote, .principle-block blockquote { margin: 0.75rem 0 0; font-style: italic; color: #333; padding-left: 0.75rem; border-left: 3px solid rgba(0,0,0,0.15); }
+      .principle-block { border-left: 4px solid var(--navy-dark); background: #f4f6f8; padding: 1rem 1.25rem; margin: 1.5rem 0; border-radius: 4px; }
+      .principle-block h3 { margin-top: 0; color: var(--navy-dark); }
       @media print {
         #sidebar, #menu-toggle, #back-to-top { display: none !important; }
         #main-content { margin-left: 0; width: 100%; }
@@ -125,10 +128,13 @@
         <li><a href="#section-1" class="nav-link">1. Programme Identity</a></li>
         <li><a href="#section-2" class="nav-link">2. The Maths of Winning</a></li>
         <li><a href="#section-3" class="nav-link">3. Offensive System</a></li>
+        <li style="padding-left: 1.25rem; margin-bottom: 0.25rem;"><a href="#section-33" class="nav-link" style="font-size: 0.82rem; padding: 0.3rem 0.5rem;">↳ 4-Out Motion</a></li>
         <li style="padding-left: 1.25rem; margin-bottom: 0.25rem;"><a href="#section-36" class="nav-link" style="font-size: 0.82rem; padding: 0.3rem 0.5rem;">↳ Zone Offence</a></li>
         <li style="padding-left: 1.25rem; margin-bottom: 0.25rem;"><a href="#section-37" class="nav-link" style="font-size: 0.82rem; padding: 0.3rem 0.5rem;">↳ The PUSH</a></li>
         <li style="padding-left: 1.25rem; margin-bottom: 0.25rem;"><a href="#section-38" class="nav-link" style="font-size: 0.82rem; padding: 0.3rem 0.5rem;">↳ Special Situations</a></li>
         <li><a href="#section-4" class="nav-link">4. Defensive System</a></li>
+        <li style="padding-left: 1.25rem; margin-bottom: 0.25rem;"><a href="#section-41" class="nav-link" style="font-size: 0.82rem; padding: 0.3rem 0.5rem;">↳ Defensive Philosophy</a></li>
+        <li style="padding-left: 1.25rem; margin-bottom: 0.25rem;"><a href="#section-46" class="nav-link" style="font-size: 0.82rem; padding: 0.3rem 0.5rem;">↳ Match-up Zone</a></li>
         <li><a href="#section-5" class="nav-link">5. Individual Development</a></li>
         <li><a href="#section-6" class="nav-link">6. Camp Feedback</a></li>
         <li><a href="#section-7" class="nav-link">7. Coach Appendix</a></li>
@@ -219,7 +225,16 @@
           <tr><td>Rebounding</td><td>Over 55% per game — 'BOX' &amp; 'GLASS'</td></tr>
           <tr><td>Free Throw %</td><td>Over 70% (minimum 20 attempts) — 'attack the paint'</td></tr>
           <tr><td>Assists</td><td>20+ per game — 'PUSH' and 'EXTRA'</td></tr>
+          <tr><td>Possession Share</td><td>50%+ per game — WIN the ball battle</td></tr>
         </table>
+
+        <div class="callout callout-warning">
+          <h3>⚠️ Dead Over Live</h3>
+          <p>In pressure situations, a <strong>dead-ball turnover is a team success</strong> over a live-ball turnover that gifts transition points.</p>
+          <p>An 8-second call, a 5-second inbound count, or a held ball that stops the break is <strong>often the right play</strong>.</p>
+          <p>What we avoid: the soft pass picked off, the loose handle in traffic, the blind advance pass that becomes a run-out layup.</p>
+          <blockquote><strong>"Protect home. Dead over live."</strong></blockquote>
+        </div>
       </section>
 
       <!-- SECTION 3 -->
@@ -241,7 +256,7 @@
           <li>Seek Mismatches — create and hunt mismatches</li>
         </ul>
 
-        <h3>3.3 The 4-Out 1-In Motion Offense</h3>
+        <h3 id="section-33">3.3 The 4-Out 1-In Motion Offense</h3>
         <p><strong>Benefits:</strong> Creates Optimal Spacing, Develops Basketball IQ, Exploits Mismatches, Emphasizes Movement and Pace, Difficult to Scout, Utilises the Post Player.</p>
 
         <div class="callout red-bg">
@@ -257,49 +272,19 @@
         <h3>3.4 Fundamental Reads</h3>
         <div class="card-grid">
           <div class="card">
-            <h3>1. SLOT TO WING — "THE WAVE"</h3>
-            <p><strong>Trigger:</strong> Slot-to-Wing pass</p>
-            <p><strong>Action:</strong> Passer immediately basket cuts — ALWAYS CUT TO SCORE</p>
-          </div>
-          <div class="card">
-            <h3>2. BALL REVERSAL / DOUBLE</h3>
-            <p><strong>Trigger:</strong> Ball reverses slot-to-slot</p>
-            <p><strong>Action:</strong> Weak side players exchange positions</p>
-          </div>
-          <div class="card">
-            <h3>3. WING TO POST — SPLIT</h3>
-            <p><strong>Trigger:</strong> Wing-to-Post pass</p>
-            <p><strong>Action:</strong> Passer screens away for nearest player</p>
-          </div>
-          <div class="card" style="border-top-color: var(--red);">
-            <h3>4. BALL SCREENS</h3>
-            <p><strong>Types:</strong> UP &nbsp;/&nbsp; DOWN &nbsp;/&nbsp; FIST &nbsp;/&nbsp; TWIX</p>
-            <p style="margin-top: 0.5rem;"><strong>Call "RED"</strong> — late shot clock signal (&lt;6 sec) triggering an immediate ball screen for the called player.</p>
-            <p style="margin-top: 0.5rem;">Ball handler reads: <strong>USE / IGNORE / SPLIT / SNAKE</strong> the screen based on defensive alignment.</p>
-          </div>
+            <h3>1. SLOT TO
+        <!-- Motion Offense Video -->
+        <div class="video-section-wrap" style="margin-top: 1.5rem;">
+          <h5>🎬 4-Out 1-In Motion — System Walkthrough</h5>
+          <iframe class="yt-embed" src="https://www.youtube.com/embed/KdFM7HoRDmo" title="4-Out 1-In Motion Offense Walkthrough" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-
-        <div class="callout">
-          <h3>Perimeter Rules</h3>
-          <ul class="styled-list">
-            <li>Always fill the spot closest to the ball</li>
-            <li>Fill to open corners once inside 3-point line</li>
-            <li>After passing: BASKET CUT or SCREEN AWAY — always one or the other</li>
-            <li>If ball is dribbled AT you: BACK CUT immediately</li>
-            <li>Move after every pass — no standing still</li>
-          </ul>
-        </div>
-
-        <h3>3.5 Screening Concepts</h3>
-        <p><strong>OFF-BALL SCREENS:</strong> Slot-to-Slot Away Screen, Post Player Away Screens. Options: CURL / STRAIGHT CUT / BACK CUT / FLARE.</p>
-        <p><strong>ON-BALL SCREENS:</strong> Slot Lift Screen, Wing Screen. Reads: USE / IGNORE / SPLIT / SNAKE.</p>
 
         <!-- Motion Offense PDF Resource -->
         <div class="resource-bar">
           <h3>📄 Full Motion Offense Reference</h3>
           <div class="resource-btn-group">
             <button class="resource-btn" onclick="openPDFModal('https://www.genspark.ai/api/files/s/lx9WNlyR?token=Z0FBQUFBQnAwT2xQOHZZS0JKTDY3VHNWaHd3MnkyNnVDWl9jS29uVFFfMlZrSE9hNDc2ZExRSHJ5UFZMSXJOVGhzZkxLYkM3UzhnaXcwVk1NNGo0QVp1dmZTMUhQdU5xc1pPUERhTV9iR0RuX0hQczdidnY1YUgxQmM3VE05b2c0NTdtbmdWMGtoRWVqVGRGY2JtbzhlTHNuWE1CVmVNZkl3VUhKSzQ4dFBOUGQwTDhSRGJkYXNMTzVLR2pld3RDMHBGUF84S0hXWktnMFRJUEpGcEhCdkZ5bVdIZUpKMndlcHZodHdfbjM5Ty01ekNVNk1iZjM2SlN1UkN5cjhvaEdDWjlRaXdQTnpuSGljZ3ZtejFwWmtBUHEwWndnejlCVVE9PQ', '4-Out 1-In Motion Offence')">📖 View in Playbook</button>
-            <a href="https://www.genspark.ai/api/files/s/lx9WNlyR?token=Z0FBQUFBQnAwT2xQOHZZS0JKTDY3VHNWaHd3MnkyNnVDWl9jS29uVFFfMlZrSE9hNDc2ZExRSHJ5UFZMSXJOVGhzZkxLYkM3UzhnaXcwVk1NNGo0QVp1dmZTMUhQdU5xc1pPUERhTV9iR0RuX0hQczdidnY1YUgxQmM3VE05b2c0NTdtbmdWMGtoRWVqVGRGY2JtbzhlTHNuWE1CVmVNZkl3VUhKSzQ4dFBOUGQwTDhSRGJkYXNMTzVLR2pld3RDMHBGUF84S0hXWktnMFRJUEpGcEhCdkZ5bVdIZUpKMndlcHZodHdfbjM5Ty01ekNVNk1iZjM2SlN1UkN5cjhvaEdDWjlRaXdQTnpuSGljZ3ZtejFwWmtBUHEwWndnejlCVVE9PQ" target="_blank" class="resource-btn-dl">⬇ Download PDF</a>
+            <a href="https://www.genspark.ai/api/files/s/lx9WNlyR?token=Z0FBQUFBQnAwT2xQOHZZS0JKTGY3VHNWaHd3MnkyNnVDWl9jS29uVFFfMlZrSE9hNDc2ZExRSHJ5UFZMSXJOVGhzZkxLYkM3UzhnaXcwVk1NNGo0QVp1dmZTMUhQdU5xc1pPUERhTV9iR0RuX0hQczdidnY1YUgxQmM3VE05b2c0NTdtbmdWMGtoRWVqVGRGY2JtbzhlTHNuWE1CVmVNZkl3VUhKSzQ4dFBOUGQwTDhSRGJkYXNMTzVLR2pld3RDMHBGUF84S0hXWktnMFRJUEpGcEhCdkZ5bVdIZUpKMndlcHZodHdfbjM5Ty01ekNVNk1iZjM2SlN1UkN5cjhvaEdDWjlRaXdQTnpuSGljZ3ZtejFwWmtBUHEwWndnejlCVVE9PQ" target="_blank" class="resource-btn-dl">⬇ Download PDF</a>
           </div>
         </div>
 
@@ -309,44 +294,25 @@
 
         <div class="plays-grid">
           <div class="play-card">
-            <h4>🏀 HORNS — Zone Offence (1)</h4>
+            <h4>🏀 HORNS — Zone Offence</h4>
             <div class="video-section-wrap">
-              <video class="html-video" controls preload="metadata">
-                <source src="https://www.genspark.ai/api/files/s/qzxTNiGT?token=Z0FBQUFBQnAwVU9XMTNNX3VXSzhYUXUzbzVIZlV5LVZTTkFuTjl5czVodVVhMHNfVDl3cEpaV3U1NmhpRU9hWDlUU1JxakJoTWZEa3I1NDdBdHJvNjM2WEx3YllCcDZGWlVKdk1PZlhHNlRSRlRteGNfbGkxVFdodlJuYU90WnRkcS1JaDRjVUdBaENjckp3Q1ljMDhFVVMzMkoyc0VnTkpyWW9qS01lSUNwSkozTGNOZVlfZEdTNU9kWVk3ZUhRRUM1cnBybW1FYkhOZkUwOW5XbjFGTnZHSFJXRVZqd3JHR3Z5eGQxaVdYbDVyanhUWGV5MGV5dDZTSEpKNnZUZV9RWEUtbWdOdU9DNzlkWW9XMTRkNHJMN1NFcjBaSXBNYlE9PQ" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+              <iframe class="yt-embed" src="https://www.youtube.com/embed/OwAmpNhj4Sg" title="HORNS — Zone Offence" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <p>Horns set attacking zone — initial alignment and first scoring options.</p>
           </div>
           <div class="play-card">
-            <h4>🏀 HORNS — Zone Offence (2)</h4>
+            <h4>🏀 HIGH-LOW — Basic Action</h4>
             <div class="video-section-wrap">
-              <video class="html-video" controls preload="metadata">
-                <source src="https://www.genspark.ai/api/files/s/zgFVD8LL?token=Z0FBQUFBQnAwVU9XYjRXUXJocGpjTmJweTd1M2UzSkpyU0ppQnE3Q3gxWXNZOFI2TVhudmtEOU40Ynl6VVBmSXBOZWJFejRwaW12UV9LVGlCOVJJaXo3VHVCR0ZQVXp4emVXa2RKNFlZcU95WUJjcFA3OEEtT0MycEJDODRuaEVrU2ozUmpjSExJSG9CMG50WDJsY2NiZTVrc3lsYkg4Ty13SmliclM4MkpWWkctM2dZaklKZ285aU5naFdrV0NjVkxCbHVxbHMweXV5bTVlV29hR2Q1bHh3dFp1X1lNcnJQQVNaTHpNQU9RamluWHFyU1BkN3RqVWlIVDNqZlVKOWk2b0hpQWFPUWIyMVRqaDhTQWtEOTlkRkhTRndnbnBoVkE9PQ" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+              <iframe class="yt-embed" src="https://www.youtube.com/embed/Op0dgJHmUeg" title="HIGH-LOW — Zone Offence: Basic Action" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
-            <p>Horns continuation — secondary actions and adjustments against zone shifts.</p>
+            <p>High-Low basic action — exploiting gaps between the top and bottom of the zone.</p>
           </div>
           <div class="play-card">
-            <h4>🏀 HIGH-LOW — Zone Offence (1)</h4>
+            <h4>🏀 HIGH-LOW — Short Corner Action</h4>
             <div class="video-section-wrap">
-              <video class="html-video" controls preload="metadata">
-                <source src="https://www.genspark.ai/api/files/s/SjeXDarf?token=Z0FBQUFBQnAwVU9YQnBUenJaay1wUmpsUVlCSVVtUWJ4Tk9sS0x5ODloVFZrUHlZYlB1bGY1Y1VDVWFhWlVLY0Q2cTJyY0ZOVFRNeG9wQXZlMGJyTVdhbFFNSmI0QlZHNUJfSDBSb1VMVTRVQTJ0RFRmR1ZZOFEzX3lxd0NSQVNWMWg5N3VPUkt6aVdhUEVpQnZwcW1sX1dSSnN5cUFSTjVuZXZsNWNEaVl2dFRqSm5oNWlvZVJDZDBRdVMxMjljUjEwblNFY1oyeVRGYnh1MTJBdTJwbU1mTDFfNTNnREZTd0I5U2gwdklRVGZ4a0hLZkx1YkFocDhWMzZXbWFoVHhqeHNMTFdkMHdHdEVUU0thbDZVSnJzb2dqLV92dGtnekE9PQ" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+              <iframe class="yt-embed" src="https://www.youtube.com/embed/WqrspikATZ8" title="HIGH-LOW — Zone Offence: Short Corner Action" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
-            <p>High-Low action — exploiting gaps between the top and bottom of the zone.</p>
-          </div>
-          <div class="play-card">
-            <h4>🏀 HIGH-LOW — Zone Offence (2)</h4>
-            <div class="video-section-wrap">
-              <video class="html-video" controls preload="metadata">
-                <source src="https://www.genspark.ai/api/files/s/h84y1D8P?token=Z0FBQUFBQnAwVU9YdzhpOUFhNkhYdlhta3JPVVZuTDlSU3NkWnh4U29IOW9mUGJEOGttVmJ6MlhGaTViUS1Ic3VVbTRaVGt2TjNYU2hXSWZWRUpEUU9XZWFrN0x1cWJGOExNanVkWGJhMS1kWVlRNmZQYk91My1FdUs4WTVSRWZTWlRJMVFXLTdBNk9fdUFBWFA2a0U5TWRCZHBiSEhSRmpWSFh1c2llWURFWjZ1SHlOLUd4SXcxVUF1Y2VZYWNzQjBiQ29OcExtbFhoTF9JTXhlb1JHZTFwVjZNWkZJOVBmRkFZSkNxWE5iLVo1YnhuOEJKZHAtOUxLSzdpQUpYRmxEVm1rdGxlZkJnRkpaZlF5bzh4bnNkRVJiVkFrRnllV1E9PQ" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <p>High-Low continuation — reading and attacking zone rotations.</p>
+            <p>High-Low short corner — attacking zone rotations with the corner option.</p>
           </div>
         </div>
 
@@ -365,10 +331,7 @@
 
         <div class="video-section-wrap" style="margin-top: 1.5rem;">
           <h5>🎬 DOWN — Transition Offence Walkthrough</h5>
-          <video class="html-video" controls preload="metadata">
-            <source src="https://www.genspark.ai/api/files/s/UicFPhSM?token=Z0FBQUFBQnAwVU9YVXVjempFbERMU2xmdlBnOEhLWGZjbzg5eG55UXM3ZTh6cGZGR29HUTZha1FHN0FaZzdaRy1TZWpCa0ExMXFqTXhNMUpyNWdfem94YXQza2lWVmxPTFpQVUMwWjE3ekswVThTOGppcmJYNGl0LWhIbVJOeU1LbXQ0aVNxMFh6TjE2Vi1OY0gwYkJJZ2EwZ2Z2ZFNLS2R6Z0M1YVNqcmJMam94VEp0SzZBRzZSQzQ1MklSTkdiUGJoS1BOc2VaQUMtcHJ0TWdVUW84dUI3dUtLWi04a3JPTDhJS001R3JrZXpPTnZ3N295dC1OSW5zcDA1RXd2UGNDcm1ac202bHJGX2FDWDgxcy12Zkc0WWZ4Q0J4d05Hd1E9PQ" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+          <iframe class="yt-embed" src="https://www.youtube.com/embed/H9MpderDBs0" title="DOWN — Transition Offence Walkthrough" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
 
         <!-- 3.8 Special Situations -->
@@ -379,43 +342,28 @@
           <div class="play-card">
             <h4>🏀 SIDE — Sideline Out of Bounds</h4>
             <div class="video-section-wrap">
-              <video class="html-video" controls preload="none">
-                <source src="https://www.genspark.ai/api/files/s/I0d7J90i?token=Z0FBQUFBQnAwVU9XTU9yMkNGMlFqZVcwMU5MSnlDdWF4UXFYRHk3T2R2Z2M5VFFCWHIxZGpiR2laMTJ1Uy1PMTNrWHF3aUt4ZU80bmZiaFJZeENLblpwekxROUZKRUR0My12cFJRMHVVNWtsZVhZUDVpRml6SFZiQUNvZGlEUkItdkFpd3BLLXhXZS1PT2tUbDFHTlRjZGJFTHZJemRJSkNScjRpMWphM2lIQjRLcWlhX19Qa09IbkVMdnVGXzdwU2NFckxjOVB4SGlZcy04d2dIY2gyNU5QWUthVXFSVGdMTnhkb3UwWmdFaHIwOW42UFBLUy0wZVgzTHpIaDRfcDAxM0VwZVJkamxNUm9JX3FNbXI1R0FoNWpjMUNBTlg4T1E9PQ" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+              <iframe class="yt-embed" src="https://www.youtube.com/embed/kNGkEY0jrSk" title="SIDE — Sideline Out of Bounds" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <p><strong>Sideline out-of-bounds.</strong> Attack quickly from the wing or corner — initiate action before the defence can set.</p>
-            <p style="font-size: 0.8rem; color: #888; margin-top: 0.5rem;">⚠️ Large file — click Play to stream.</p>
           </div>
           <div class="play-card">
             <h4>🏀 DOUBLE — Baseline Out of Bounds</h4>
             <div class="video-section-wrap">
-              <video class="html-video" controls preload="none">
-                <source src="https://www.genspark.ai/api/files/s/biOx6B20?token=Z0FBQUFBQnAwVU9XaDRRRjNWSzIzV0dpb1V2MFZpbjl2M2l0ckFZbG1YMkVYc3p3WkRxY1RUMlRzeXJ2cThMaENWZmRWVVljX05FM2xYbGFDN2wwSkxKMDloR2UzUkZ3TzB0cjlSTzVWOWFvU2pYVi0zYURFSDl2UHBoQUxMRE9ZY09oMFk1RVhtUlVUakVFYlhGbGFfMGU4Y1JKSXlzUENfN1JibFYycVRQR3N3dk5qdHdVSDAtWjFDRnl0Q2NscVI3RUppTF8ya0l2dUk2Tm1NQjNXMjJNZWI0emZYVm5fcFEyUWZaSUQyU3JLVUE3SVdMcmdxajJvUndPTE9qT1JaS0RnOXlTbVg1Z3c1NWJYS0phZHBIRVdFQTBRSzdqVmc9PQ" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+              <iframe class="yt-embed" src="https://www.youtube.com/embed/6YfJiT02R0M" title="DOUBLE — Baseline Out of Bounds" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <p><strong>Double screen action.</strong> Two coordinated screens release a shooter or cutter for a high-quality, uncontested look.</p>
-            <p style="font-size: 0.8rem; color: #888; margin-top: 0.5rem;">⚠️ Large file — click Play to stream.</p>
           </div>
           <div class="play-card">
             <h4>🏀 BOX — Baseline Out of Bounds</h4>
             <div class="video-section-wrap">
-              <video class="html-video" controls preload="none">
-                <source src="https://www.genspark.ai/api/files/s/uGzME6Dc?token=Z0FBQUFBQnAwVU9XRVhnWWlWcVlZZ3d0X0kxdmFSZTJXcDc1aC05N0FmcUx0M1RWeGdjR0N6cHZKbUhTUkItVFRQb3phclF1OTktcUwzbU1PNkUydzhSRkNzcWxsTWRKU21MY1Z6ZnlzV1Zkbk93bUhwVXV3dksta0ZQMkUxdDhZWmI4NjZrT0gwc0RPLW1mUjlzRVVabWNmd25KWjk3eDV3ZHF0b013dlZVMF9TcHhTZmk5YWx5cXY4MUVXSC1hY2tqazVKYzFtNGRvLWRGaVNOM0ZpMVl2dE9ZSnRLYUtpRFlTUEdkUDlEOUxmVVllZmM4eTA0ZVRuYlA5NE9KSWVvWjAtQVBPd2t1Vm4zeU8tMTNxUHFNUjVwZVlROWl0aGc9PQ" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+              <iframe class="yt-embed" src="https://www.youtube.com/embed/v3-q_eLU-Cw" title="BOX — Baseline Out of Bounds" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <p><strong>Box formation inbound.</strong> Use to free up shooters and cutters from a box set — split the defence with coordinated movement.</p>
-            <p style="font-size: 0.8rem; color: #888; margin-top: 0.5rem;">⚠️ Large file — click Play to stream.</p>
           </div>
           <div class="play-card">
             <h4>🏀 HEAD TAP — After Time Out (ATO)</h4>
             <div class="video-section-wrap">
-              <video class="html-video" controls preload="metadata">
-                <source src="https://www.genspark.ai/api/files/s/LnO2E8iD?token=Z0FBQUFBQnAwVU9YVVFDYmJ6T0UwTU1xSUxkYUNJb05rT1huUWJSd1J0M3Bpckh6ejIxTDJpalZJQjU5UVNFR2JVN3NHVmhzUl91M0xmcGpBS1BqVEFLMWhtRzQ4VmdyRTVPanI5NmdyakVGaXJKWVVtUEtaMUt6Zy1uUTFFZlRndU93ZmNqY2Zrcjk0T3VJQmdpelZUdG4ycElVR2pDMzduam12V04ya3E5dEo5eWVYOXFUTllVZnJRQWhsYl9qWUZyM21VbTd4NndXa2x2Rk1PemVZQW9ydk1iSTVEdnpmNVRpOGYyVDE5bDg0d3dfQy1ITkVUR3dKSVk0Qm9falRBU0d3T296dVhlX2VPemdpY1JsdXhYQXE2ZmZxaU9uT0E9PQ" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
+              <iframe class="yt-embed" src="https://www.youtube.com/embed/xzRV0eBnl6A" title="HEAD TAP — After Time Out (ATO)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
             <p><strong>ATO set for a clean shot.</strong> Use when you need a high-percentage look coming out of a timeout. Execute with pace and precision.</p>
           </div>
@@ -429,7 +377,14 @@
           <h2>"Nothing Easy — Anticipate. Disrupt. Defend."</h2>
         </div>
 
-        <h3>4.2 Seven Defensive Non-Negotiables</h3>
+        <!-- 4.1 Defensive Philosophy Video -->
+        <h3 id="section-41" style="margin-top: 2rem;">4.1 Defensive Philosophy</h3>
+        <div class="video-section-wrap" style="margin-top: 1rem;">
+          <h5>🎬 Our Defensive Approach — Philosophy &amp; Principles</h5>
+          <iframe class="yt-embed" src="https://www.youtube.com/embed/rAsxc6VDveg" title="Defensive Philosophy &amp; Principles" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+
+        <h3 style="margin-top: 2.5rem;">4.2 Seven Defensive Non-Negotiables</h3>
         <ul class="numbered-red-list">
           <li>STANCE at all times — point of attack, once away, help-side</li>
           <li>Talk and echo every trip — matchups, screens, tags, calls</li>
@@ -439,6 +394,18 @@
           <li>Talk screens early — NEVER go under on shooters</li>
           <li>Box out before rebounding — finish every possession</li>
         </ul>
+
+        <div class="principle-block">
+          <h3>4.3 Off-Ball Gravity</h3>
+          <p>Success is not only touching the ball. A hard cut, deliberate lift, strong screen, or deep seal that draws two defenders is a <strong>winning play for this programme</strong>, even if you never receive the pass.</p>
+          <p>We value:</p>
+          <ul>
+            <li>Drawing help and shifting the low man</li>
+            <li>Opening driving lanes through purposeful movement</li>
+            <li>Creating the extra pass through pressure and movement</li>
+          </ul>
+          <blockquote><strong>"Your movement creates value, even when the stat sheet doesn't show it."</strong></blockquote>
+        </div>
 
         <h3 style="margin-top: 2rem">4.5 Defensive Coverages &amp; Play Call System</h3>
         <div class="card-grid">
@@ -458,15 +425,9 @@
           </div>
         </div>
 
-        <div class="video-section-wrap" style="margin-top: 1.5rem;">
+        <div id="section-46" class="video-section-wrap" style="margin-top: 1.5rem;">
           <h5>🎬 4.6 — 2-3 Match-up Zone Defence Walkthrough</h5>
-          <video class="html-video" controls preload="none">
-            <source src="https://www.genspark.ai/api/files/s/KBkZ7Ex4?token=Z0FBQUFBQnAwVU83LWltWFhrdEJEUHpwUTlLSXlOdHl4YXZTeFlnTzJnSXZDeTFlV01nTV9NVW9WSlFPVUhxYk1fdkJJWkpNdm1PV2xwN1lINVdRRDFxLWxUVGoxeENpQ3BCUkdTU2VzZ3pZSzNiNlpuTWt2Tk5vcDN2bHVnbUlBeVN0YUZxZWtuQk9zSEFJeDlIb1U0aGNuT1NqTGladzNvWjhRU3JMcDk3dUdTZkpITGFjYkkweTJ0R0hSbHp1Rmo5QzZFQjF5TkFucldLaDByQUh3QXVVUlRlMGlULWprWFV5TmlQRGtvRkF6TDhPaGZNeVpmYzhla3pPRGptSHV3SThuNXlNM1lYOHFZN1RaQVdNMk5NcHUwZGtZSmRjQkE9PQ" type="video/quicktime">
-            Your browser does not support the video tag.
-          </video>
-          <div class="info-note" style="margin-top: 0.75rem; margin-bottom: 0;">
-            <p><span class="video-format-badge badge-safari">MOV</span> <strong>Safari only</strong> — this file is in MOV format (2.2 GB) and plays natively on <strong>Safari (Mac/iPhone)</strong>. Chrome &amp; Firefox users: convert to MP4 for cross-device playback. Use <a href="https://www.handbrake.fr" target="_blank">HandBrake</a> (free, desktop) or <a href="https://cloudconvert.com" target="_blank">CloudConvert</a> (online).</p>
-          </div>
+          <iframe class="yt-embed" src="https://www.youtube.com/embed/SLeH7tvM4Mc" title="2-3 Match-up Zone Defence Walkthrough" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
       </section>
 
@@ -500,9 +461,22 @@
         </div>
 
         <h3 style="margin-top: 2rem">5.2 Role Clarity — Own Your Lane</h3>
-        <div class="callout red-bg">
-          <p>"Know exactly how you impact winning. If you're an elite spacer, screener, rebounder, or organiser — double down."</p>
-        </div>
+        <p>Know exactly how you impact winning. Most players will carry two or three of these roles — own yours and make them non-negotiable.</p>
+        <table>
+          <thead>
+            <tr><th>Role</th><th>What it looks like in a GB jersey</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Organiser</strong></td><td>Controls tempo, initiates actions, keeps the team in shape under pressure</td></tr>
+            <tr><td><strong>Spacer</strong></td><td>Creates width, holds defenders, opens driving lanes and extra passes</td></tr>
+            <tr><td><strong>Paint Attacker</strong></td><td>Gets downhill, collapses the defence, earns foul-line possessions</td></tr>
+            <tr><td><strong>Screener</strong></td><td>Frees teammates, creates separation, connects the offence</td></tr>
+            <tr><td><strong>Stopper</strong></td><td>Takes hard match-ups, defends with discipline, sets our defensive tone</td></tr>
+            <tr><td><strong>Rebounder</strong></td><td>Wins extra possessions, finishes defensive trips, brings physicality</td></tr>
+            <tr><td><strong>Energy Piece</strong></td><td>Changes momentum through activity, body language, and relentless effort</td></tr>
+          </tbody>
+        </table>
+        <blockquote style="font-style:italic; padding: 0.75rem 1rem; border-left: 3px solid var(--navy); color: #444; margin-top: 1rem;"><em>"If you're an elite spacer, screener, rebounder, or organiser — double down. That is how we meet our collective potential."</em></blockquote>
       </section>
 
       <!-- SECTION 6 -->
@@ -540,6 +514,29 @@
           <li><strong>Assistant Coach Role:</strong> Support and challenge, no ego coaching.</li>
           <li><strong>Practice Standards:</strong> Teach the WHY, as much 5v5 as possible, constraints-led.</li>
         </ul>
+
+        <h3>7.2 Game Day Standards</h3>
+
+        <h4>Timeout Protocol</h4>
+        <p>Timeouts are 40 seconds. They are for <strong>coaching, not reacting</strong>.</p>
+        <p><strong>Structure:</strong></p>
+        <ol class="numbered-red-list">
+          <li>What is happening?</li>
+          <li>What are we changing?</li>
+          <li>What is the first action out of the timeout?</li>
+        </ol>
+        <p style="margin-top: 1rem;">Coaches give the key message. Players listen, lock in, clarify only what matters. One tactical focus. One behavioural focus. One reminder.</p>
+
+        <h4 style="margin-top: 1.5rem;">On-Court Huddles</h4>
+        <p>At every meaningful stoppage, we get together quickly, make eye contact, and communicate calmly.</p>
+        <p><strong>Standard phrases:</strong></p>
+        <ul class="styled-list">
+          <li><em>"What's next?"</em></li>
+          <li><em>"Same standards"</em></li>
+          <li><em>"Protect home"</em></li>
+          <li><em>"Next stop, next score"</em></li>
+        </ul>
+        <p style="margin-top: 1rem;">Huddles build trust, calm emotion, and sharpen our next action. They are part of our tactical model — not just our personality.</p>
       </section>
 
       <!-- FOOTER -->
