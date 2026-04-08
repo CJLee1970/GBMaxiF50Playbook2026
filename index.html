@@ -636,8 +636,9 @@
   document.getElementById('modal-title').textContent = '📄 ' + (title || 'Document Viewer');
   document.getElementById('modal-dl-link').href = dlUrl || url;
   document.getElementById('pdf-modal').classList.add('open');
-  document.body.style.overflow = 'hidden';
-}
+        document.body.style.overflow = 'hidden';
+      }
+
       function closePDFModal() {
         document.getElementById('pdf-modal').classList.remove('open');
         setTimeout(() => { document.getElementById('pdf-iframe').src = ''; }, 300);
